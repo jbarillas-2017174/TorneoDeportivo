@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 exports.init=()=>{
     const uriMongo = 'mongodb://127.0.0.1:27017/torneoDeportivo'
-    mongoose.Promise = Promise.all;
+    mongoose.Promise = global.Promise;
 
     mongoose.connection.on('error', ()=>{
         console.log('MongoDB| Could not connect to mongodb');
